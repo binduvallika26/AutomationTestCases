@@ -40,7 +40,6 @@ public class Alerts {
 		System.out.println("message passing to alert window:"+alertwindow.getText());
 		alertwindow.sendKeys("decision call");
 		alertwindow.accept();
-		//alert was completed
 	}
 
 }
