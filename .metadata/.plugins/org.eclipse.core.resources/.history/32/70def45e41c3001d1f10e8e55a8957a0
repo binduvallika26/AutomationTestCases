@@ -1,0 +1,38 @@
+package MyPackage;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class FullPageScreenshot {
+private static final String FileUtils = null;
+
+//how to capture Screenshot of Full Page?
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\bkarutur\\eclipse-workspace\\InterviewQuestions\\src\\main\\resources\\chromedriver.exe");
+
+		  ChromeOptions options = new ChromeOptions();
+		  options.addArguments("--remote-allow-origins=*");
+		  
+		  WebDriver driver = new ChromeDriver(options);
+		driver.get("https://demo.nopcommerce.com/");
+		driver.manage().window().maximize();
+		TakesScreenshot ts= (TakesScreenshot)driver;
+		File src=ts.getScreenshotAs(OutputType.FILE);
+		File trg= new File("C:\\Users\\bkarutur\\eclipse-workspace\\InterviewQuestions\\Screenshot\\output.jpg");
+		FileUtils.copyFile(src, trg);
+		driver.close();
+		
+		
+		
+
+	}
+
+}

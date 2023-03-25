@@ -1,0 +1,10 @@
+package MyPackage;
+
+public class OpenUrl2Tabs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
